@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+/*RESET UNIVERSAL*/
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*VARIABLES*/
+
+:root {
+  --bg-color: #f3f3f3;
+  --txt-color: #030303;
+}
+
+[data-theme='oscuro'] {
+  --bg-color: #3f3f3f;
+  --txt-color: #e9e5e5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+  background: var(--bg-color);
+  color: var(--txt-color);
+}
+
+/*HEADER/MENU*/
+#menu {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu h1 {
+  font-size: 2rem;
+}
+
+#menu span {
+  font-size: 2.3rem;
+}
+
+/*TOGGLE SWITCH*/
+
+#toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px;
+  width: 60px;
+  background-color: #1f1e1e;
+  border-radius: 16px;
+  padding: 2px 2px 0 2px;
+  position: relative;
+}
+
+#toggle {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slider::before {
+  position: absolute;
+  content: '';
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+  top: -1px;
+  left: -1px;
+  box-shadow: blue 0 0 5px;
+  transition: 0.4s;
+}
+
+input:checked + .slider::before {
+  transform: translateX(32px);
+}
+
+/*BANNER*/
+
+#banner {
+  min-height: 500px;
+  background: url('./img/banneroscuro.png') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+}
+
+#banner h1 {
+  font-size: 4.5rem;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-top: 100px;
+}
+
+#banner p {
+  font-size: 2rem;
+  padding: 20px;
+}
+
+/*SERVICIOS*/
+
+#info {
+  display: flex;
+  justify-content: center;
+  min-height: 320px;
+}
+
+#info div {
+  margin: 20px;
+  font-size: 1.6rem;
+}
+
+/*FOOTER*/
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  min-height: 100px;
+  background: #3f3f3f;
+  color: #f3f3f3;
+  border-top: 2px #f3f3f3 solid;
+}
